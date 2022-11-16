@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-cadastrar-assinatura.css" />
+    <script src="script.js"></script>
+    <title>Cadastro Academia</title>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="form">
+        <fieldset>
+          <legend align="center">CADASTRO DE ASSINATURA</legend>
+          <div class="inputBox">
+            <label for="data-inicio">Data de Inicio</label>
+            <input
+              type="date"
+              name="data-inicio"
+              class="inputUser"
+              id="data-inicio"
+              required
+            />
+          </div>
+          <div class="inputBox">
+            <p>Nome do plano:</p>
+            <select id="tipo">
+              <option selected disabled value="">Selecione</option>
+            </select>
+          </div>
+          <div class="inputBox">
+            <input type="text" id="cpf" name="cpf" class="inputUser" required />
+            <label for="cpf" class="inputLabel">CPF do Cliente</label>
+          </div>
+          <br />
+          <button id="submit" onclick="cadastrarAssinatura()">Cadastrar</button>
+          <p style="padding-top: 10px; color: white">
+            Ir para
+            <a id="submit-listar" href="listar.html">listagem</a>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let url2 = "http://localhost:3000/";
+  window.onload = function carregar() {
+    fetch(url2 + "planos")
+      .then((response) => response.json())
+      .then((planos) => {
+        console.log(planos);
+
+        const planoSelect = document.getElementById("tipo");
+        planos.forEach((element) => {
+          let optionPlano = document.createElement("option");
+          optionPlano.value = element.id;
+          optionPlano.label =
+            element.nomePlano +
+            " " +
+            element.tipoPlano +
+            " " +
+            element.valorPlano;
+          planoSelect.appendChild(optionPlano);
+        });
+      });
+  };
+</script>

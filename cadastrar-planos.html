@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-cadastrar-planos.css" />
+    <script src="script.js"></script>
+    <title>Cadastro Academia</title>
+  </head>
+
+  <body>
+    <div class="box">
+      <fieldset>
+        <legend align="center">CADASTRO DE PLANOS</legend>
+
+        <div class="inputBox">
+          <input type="text" id="nome" name="nome" class="inputUser" required />
+          <label for="nome" class="inputLabel">Nome do Plano</label>
+        </div>
+        <br />
+        <div class="inputBox">
+          <input
+            type="text"
+            id="valor"
+            name="valor"
+            class="inputUser"
+            required
+          />
+          <label for="valor" class="inputLabel">Valor do Plano</label>
+        </div>
+        <br />
+        <div class="inputBox">
+          <p>Tipo do plano:</p>
+          <select id="tipo">
+            <option selected disabled value="">Selecione</option>
+            <option>Mensal</option>
+            <option>Anual</option>
+          </select>
+        </div>
+        <button id="submit" onclick="cadastrarPlano()">Cadastrar</button>
+        <p style="padding-top: 10px; color: white">
+          Ir para
+          <a id="submit-listar" href="listar.html">listagem</a>
+        </p>
+      </fieldset>
+    </div>
+  </body>
+</html>

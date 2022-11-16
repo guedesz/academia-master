@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-cadastrar.css" />
+    <script src="script.js"></script>
+    <title>Cadastro Academia</title>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="form">
+        <fieldset>
+          <legend align="center">CADASTRO DE CLIENTE</legend>
+
+          <div class="inputBox">
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              class="inputUser"
+              required
+            />
+            <label for="nome" class="inputLabel">Nome Completo</label>
+          </div>
+          <br />
+          <div class="inputBox">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="inputUser"
+              required
+            />
+            <label for="email" class="inputLabel">Email</label>
+          </div>
+          <br />
+
+          <div class="inputBox">
+            <label for="nascimento">Data de Nascimento</label>
+            <input
+              type="date"
+              name="nascimento"
+              class="inputUser"
+              id="nascimento"
+              required
+            />
+          </div>
+          <br />
+          <div class="inputBox">
+            <input
+              type="text"
+              id="telefone"
+              name="telefone"
+              class="inputUser"
+              required
+            />
+            <label for="telefone" class="inputLabel">Telefone</label>
+          </div>
+          <br />
+          <div class="inputBox">
+            <input type="text" id="cpf" name="cpf" class="inputUser" required onblur="validaCPF(this.id)" />
+            <label for="cpf" class="inputLabel">CPF</label>
+          </div>
+          <br />
+          <button id="submit" onclick="cadastrarCliente()">
+            Cadastrar
+          </button>
+          <p style="padding-top: 10px; color: white">
+            Ir para
+            <a id="submit-listar" href="listar.html">listagem</a>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
